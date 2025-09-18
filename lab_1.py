@@ -7,7 +7,7 @@ import time
 from collections import deque
 import signal
 
-JOINT_NAME = "leg_front_r_1"
+JOINT_NAME = "leg_front_l_1"
 ####
 ####
 KP = 0.0  # YOUR KP VALUE
