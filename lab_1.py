@@ -44,7 +44,7 @@ class JointStateSubscriber(Node):
     def get_target_joint_info(self):
         ####
         #### YOUR CODE HERE
-        return -1.5, 0  # arbitrary value (pos in radians)
+        return 0, 0  # arbitrary value (pos in radians)
         ####
 
         # target_joint_pos, target_joint_vel
@@ -53,9 +53,9 @@ class JointStateSubscriber(Node):
         ####
         #### YOUR CODE HERE
         if joint_pos > target_joint_pos:
-            return 0.5
+            return 0.15
         else:
-            return -1 * 0.5
+            return -0.15
         ####
 
     def print_info(self):
