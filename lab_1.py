@@ -52,7 +52,7 @@ class JointStateSubscriber(Node):
     def calculate_torque(self, joint_pos, joint_vel, target_joint_pos, target_joint_vel):
         ####
         #### YOUR CODE HERE
-        if joint_pos - target_joint_pos > 0:
+        if target_joint_pos - joint_pos > 0:
             return MAX_TORQUE
         else:
             return -1 * MAX_TORQUE
