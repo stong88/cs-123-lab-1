@@ -53,9 +53,9 @@ class JointStateSubscriber(Node):
         ####
         #### YOUR CODE HERE
         if target_joint_pos - joint_pos > 0:
-            return MAX_TORQUE
+            return 0.5
         else:
-            return -1 * MAX_TORQUE
+            return -1 * 0.5
         ####
 
     def print_info(self):
