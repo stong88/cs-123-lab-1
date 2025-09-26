@@ -44,7 +44,7 @@ class JointStateSubscriber(Node):
     def get_target_joint_info(self):
         ####
         #### YOUR CODE HERE
-        return 1.5, 0  # arbitrary value (pos in radians)
+        return -1.5, 0  # arbitrary value (pos in radians)
         ####
 
         # target_joint_pos, target_joint_vel
