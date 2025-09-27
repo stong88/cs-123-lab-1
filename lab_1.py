@@ -10,7 +10,7 @@ import signal
 JOINT_NAME = "leg_front_r_1"
 ####
 ####
-KP = 0.0  # YOUR KP VALUE
+KP = 2.0  # YOUR KP VALUE
 KD = 0.0  # YOUR KD VALUE
 ####
 ####
@@ -52,10 +52,22 @@ class JointStateSubscriber(Node):
     def calculate_torque(self, joint_pos, joint_vel, target_joint_pos, target_joint_vel):
         ####
         #### YOUR CODE HERE
-        if joint_pos > target_joint_pos:
-            return 0.15
-        else:
-            return -0.15
+        
+        # PD control
+        # ---------------------------------
+        # return KP * (target_joint_pos - joint_pos) + KD (target_joint_vel - joint_vel)
+
+        # P control
+        # ---------------------------------
+        return KP * (target_joint_pos - joint_pos)
+
+
+        # Bang bang
+        # ---------------------------------
+        # if joint_pos > target_joint_pos:
+        #     return 0.15
+        # else:
+        #     return -0.15
         ####
 
     def print_info(self):
