@@ -38,6 +38,11 @@ class JointStateSubscriber(Node):
         self.target_joint_vel = 0
         # self.torque_history = deque(maxlen=DELAY)
 
+        self.delay_buffer_size = int(delay_seconds * control_frequency)
+        self.angle_buffer = deque(maxlen=self.delay_buffer_size)
+        self.velocity_buffer = deque(maxlen=self.delay_buffer_size)
+
+
         # Create a timer to run control_loop at the specified frequency
         self.create_timer(1.0 / LOOP_RATE, self.control_loop)
 
@@ -84,6 +89,11 @@ class JointStateSubscriber(Node):
         joint_index = msg.name.index(JOINT_NAME)
         joint_pos = msg.position[joint_index]
         joint_vel = msg.velocity[joint_index]
+
+        self.angle_buffer.append(joint_pos)
+        self.velocity_buffer.append(joint_vel)
+        joint_pos = self.angle_buffer[0]
+        joint_vel = self.velocity_buffer[0]
 
         self.joint_pos = joint_pos
         self.joint_vel = joint_vel
