@@ -6,6 +6,7 @@ import numpy as np
 import time
 from collections import deque
 import signal
+import math
 
 JOINT_NAME = "leg_front_r_1"
 ####
@@ -13,6 +14,7 @@ JOINT_NAME = "leg_front_r_1"
 KP = 1.25  # YOUR KP VALUE
 KD = 0.1  # YOUR KD VALUE
 DELAY_SECONDS = 0.005
+TARGET_POS_SIN_FREQ = 1
 ####
 ####
 LOOP_RATE = 200  # Hz
@@ -50,7 +52,12 @@ class JointStateSubscriber(Node):
     def get_target_joint_info(self):
         ####
         #### YOUR CODE HERE
-        return 0, 0  # arbitrary value (pos in radians)
+        # Time-based
+        current_time = time.time()
+        return math.sin(TARGET_POS_SIN_FREQ * current_time), 0
+
+        # Constant
+        # return 0, 0  # arbitrary value (pos in radians)
         ####
 
         # target_joint_pos, target_joint_vel
