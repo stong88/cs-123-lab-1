@@ -10,8 +10,8 @@ import signal
 JOINT_NAME = "leg_front_r_1"
 ####
 ####
-KP = 2.0  # YOUR KP VALUE
-KD = 0.3  # YOUR KD VALUE
+KP = 1.25  # YOUR KP VALUE
+KD = 0.1  # YOUR KD VALUE
 ####
 ####
 LOOP_RATE = 200  # Hz
