@@ -12,6 +12,7 @@ JOINT_NAME = "leg_front_r_1"
 ####
 KP = 1.25  # YOUR KP VALUE
 KD = 0.1  # YOUR KD VALUE
+DELAY_SECONDS = 0.01
 ####
 ####
 LOOP_RATE = 200  # Hz
@@ -38,7 +39,7 @@ class JointStateSubscriber(Node):
         self.target_joint_vel = 0
         # self.torque_history = deque(maxlen=DELAY)
 
-        self.delay_buffer_size = int(delay_seconds * control_frequency)
+        self.delay_buffer_size = int(DELAY_SECONDS * LOOP_RATE)
         self.angle_buffer = deque(maxlen=self.delay_buffer_size)
         self.velocity_buffer = deque(maxlen=self.delay_buffer_size)
 
