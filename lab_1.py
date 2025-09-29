@@ -12,7 +12,7 @@ JOINT_NAME = "leg_front_r_1"
 ####
 KP = 1.25  # YOUR KP VALUE
 KD = 0.1  # YOUR KD VALUE
-DELAY_SECONDS = 0.01
+DELAY_SECONDS = 0.005
 ####
 ####
 LOOP_RATE = 200  # Hz
