@@ -55,11 +55,11 @@ class JointStateSubscriber(Node):
         
         # PD control
         # ---------------------------------
-        # return KP * (target_joint_pos - joint_pos) + KD (target_joint_vel - joint_vel)
+        return KP * (target_joint_pos - joint_pos) + KD (target_joint_vel - joint_vel)
 
         # P control
         # ---------------------------------
-        return KP * (target_joint_pos - joint_pos)
+        # return KP * (target_joint_pos - joint_pos)
 
 
         # Bang bang
