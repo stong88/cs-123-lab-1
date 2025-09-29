@@ -54,7 +54,7 @@ class JointStateSubscriber(Node):
         #### YOUR CODE HERE
         # Time-based
         current_time = time.time()
-        return math.sin(TARGET_POS_SIN_FREQ * current_time), 0
+        return math.pi * math.sin(TARGET_POS_SIN_FREQ * current_time), 0
 
         # Constant
         # return 0, 0  # arbitrary value (pos in radians)
